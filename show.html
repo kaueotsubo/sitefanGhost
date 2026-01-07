@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/f/f6/Grucifix_no_background.svg">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="css/global.css" rel="stylesheet">
+    <link href="css/show.css" rel="stylesheet"> <title>Shows - The Band Ghost</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">The Band Ghost</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="show.html">Shows</a></li> <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sobre
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="sobre.html#sobre">O Clero</a></li>
+                            <li><a class="dropdown-item" href="sobre.html#linhagem-papal">Linhagem Papal</a></li>
+                            <li><a class="dropdown-item" href="index.html#discografia">Discografia</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="shows" class="page-section">
+            <div class="container">
+                <h1 class="page-title">Próximos Shows - Skeletour 2026</h1>
+                <img src="img/shows.jpg" alt="Pôster da turnê Skeletour 2026 da banda Ghost" class="tour-poster" />
+
+                <div class="iframe-anuncio">
+                    <h4>Anúncio</h4>
+                    <iframe src="anuncio.html" title="Anúncio Fictício" height="300">
+                        Seu navegador não suporta iframes.
+                    </iframe>
+                </div>
+
+                <h2 class="section-title">Datas da Turnê</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Cidade</th>
+                                <th>Local</th>
+                                <th>Ingressos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Data">21 de Janeiro, 2026</td>
+                                <td data-label="Cidade">Orlando, FL</td>
+                                <td data-label="Local">Amway Center</td>
+                                <td data-label="Ingressos"><a href="#" class="btn-ticket btn-soon">Vendas em Breve</a></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Data">22 de Janeiro, 2026</td>
+                                <td data-label="Cidade">Jacksonville, FL</td>
+                                <td data-label="Local">VyStar Arena</td>
+                                <td data-label="Ingressos"><a href="#" class="btn-ticket btn-soon">Vendas em Breve</a></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Data">24 de Janeiro, 2026</td>
+                                <td data-label="Cidade">Knoxville, TN</td>
+                                <td data-label="Local">Thompson-Boling Arena</td>
+                                <td data-label="Ingressos"><a href="#" class="btn-ticket btn-soon">Vendas em Breve</a></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Data">25 de Janeiro, 2026</td>
+                                <td data-label="Cidade">Charlotte, NC</td>
+                                <td data-label="Local">Spectrum Center</td>
+                                <td data-label="Ingressos"><a href="#" class="btn-ticket btn-soon">Vendas em Breve</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="full-tour-button-container">
+                    <a href="https://ghost-official.com/tour" target="_blank" class="btn btn-outline">
+                        Ver a Turnê Completa
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button onclick="topFunction()" id="backToTopBtn" title="Voltar ao topo"><i class="fa fa-arrow-up"></i></button>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-spotify"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+
+            <div class="svg-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="70" viewBox="0 0 24 34" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="grucifix-svg">
+                    <path d="M12 2 L12 32 M2 12 L22 12" />
+                    <path d="M12 10 a 3 3 0 0 1 0 -6 a 3 3 0 0 1 0 6 z" />
+                    <path d="M12 4 L12 10 M10 7 L14 7" />
+                    <path d="M18 12 a 6 6 0 0 0 -12 0 v14" />
+                </svg>
+            </div>
+
+            <p>&copy; 2025 The Band Ghost. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Script Apenas para o botão Voltar ao Topo (o menu agora usa o script do Bootstrap acima)
+        const backToTopBtn = document.getElementById("backToTopBtn");
+        window.onscroll = function () { scrollFunction(); };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                if (backToTopBtn) backToTopBtn.style.display = "block";
+            } else {
+                if (backToTopBtn) backToTopBtn.style.display = "none";
+            }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

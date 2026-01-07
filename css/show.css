@@ -1,0 +1,144 @@
+/* --- show.css: Estilos da Página de Shows --- */
+
+/* Imagem do Pôster */
+.tour-poster {
+    display: block;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto 3rem auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    border: 1px solid var(--dark-purple);
+}
+
+/* Anúncio (Iframe) */
+.iframe-anuncio {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid var(--primary-color);
+    background: #111;
+    border-radius: 8px;
+    max-width: 800px;
+}
+.iframe-anuncio h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-family: 'Metal Mania', cursive;
+}
+.iframe-anuncio iframe {
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+}
+
+/* --- Tabela de Shows --- */
+.table-container {
+    overflow-x: auto; 
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(20, 20, 20, 0.8); /* Fundo escuro */
+    border: 1px solid var(--primary-color);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--dark-purple);
+    color: var(--text-color);
+}
+
+th {
+    font-family: 'Metal Mania', cursive;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    background-color: rgba(179, 0, 255, 0.1); /* Leve roxo no cabeçalho */
+}
+
+td { vertical-align: middle; }
+
+/* Botões da Tabela */
+.btn-ticket {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    display: inline-block;
+    border: 1px solid var(--primary-color); /* Borda para definição */
+}
+
+.btn-ticket:hover {
+    background-color: #fff;
+    color: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+/* Botão "Vendas em Breve" (Desativado) */
+.btn-ticket.btn-soon {
+    background-color: #333; /* Cinza um pouco mais claro que o fundo */
+    border: 1px solid #666; /* Borda cinza visível */
+    color: #aaa; /* Texto cinza claro */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+.btn-ticket.btn-soon:hover {
+    background-color: #333;
+    color: #aaa;
+    box-shadow: none;
+}
+
+.full-tour-button-container {
+    text-align: center;
+    margin-top: 3rem; 
+}
+
+/* Responsividade da Tabela (Modo Card no Celular) */
+@media (max-width: 950px) {
+    .table-container thead { display: none; }
+    .table-container table, .table-container tbody, .table-container tr, .table-container td {
+        display: block; width: 100%;
+    }
+    .table-container tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--primary-color);
+        border-radius: 8px;
+        padding: 1rem;
+        background-color: #0f0f0f;
+    }
+    .table-container td {
+        padding: 0.5rem 0;
+        text-align: right; /* Conteúdo à direita */
+        position: relative;
+        padding-left: 50%;
+        border-bottom: none;
+    }
+    /* Rótulos (Data, Cidade, etc) à esquerda */
+    .table-container td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+        color: var(--primary-color);
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+    }
+    .table-container td[data-label="Ingressos"] {
+        text-align: center;
+        margin-top: 1rem;
+        padding-left: 0;
+    }
+    .table-container td[data-label="Ingressos"]::before { display: none; }
+}

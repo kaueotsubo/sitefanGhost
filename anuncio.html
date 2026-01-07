@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background-color: #000;
+            color: #ff0000; /* Vermelho sangue para dar o tom de "fim" */
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+
+        .container {
+            border: 4px double #ff0000;
+            padding: 20px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Metal Mania', cursive;
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0px #330000;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #fff;
+            letter-spacing: 4px;
+        }
+
+        .date {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #ff0000;
+            animation: glitch 1.5s infinite;
+            margin-top: 10px;
+        }
+
+        .cta {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            transition: all 0.3s;
+        }
+        .cta:hover {
+            background: #ff0000;
+            border-color: #ff0000;
+            box-shadow: 0 0 10px #ff0000;
+        }
+
+        /* Efeito de "Falha" no texto da data */
+        @keyframes glitch {
+            0% { transform: skew(0deg); opacity: 1; }
+            20% { transform: skew(-10deg); opacity: 0.8; }
+            40% { transform: skew(10deg); opacity: 1; }
+            60% { transform: skew(0deg); opacity: 1; }
+            80% { transform: skew(5deg); opacity: 0.9; }
+            100% { transform: skew(0deg); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Skeletour</h1>
+        <h2>The Final Ritual</h2>
+        <div class="date">ENDS FEBRUARY 2026</div>
+        <a href="https://ghost-official.com" target="_blank" class="cta">GARANTA SEU LUGAR</a>
+    </div>
+</body>
+</html>

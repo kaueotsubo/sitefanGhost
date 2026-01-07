@@ -1,0 +1,715 @@
+/* --- Estilos Gerais e Variáveis --- */
+:root {
+    --primary-color: #b300ff;
+    --dark-purple: #4c006b;
+    --text-color: #d1d1d1;
+    --dark-bg: #0a0a0a;
+}
+
+/*  Espaçamento 1.5 em todo o corpo */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to right, #000000, var(--dark-purple));
+    color: var(--text-color);
+    margin: 0;
+    padding-top: 70px; /* Espaço para a navbar fixa */
+    line-height: 1.5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-family: 'Metal Mania', cursive;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--primary-color);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-family: 'Metal Mania', cursive;
+    color: var(--primary-color);
+    font-size: 1.75rem;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Links na horizontal */
+    flex-direction: row; /* Garante a direção horizontal */
+    gap: 1.5rem;
+    margin-left: auto; /* Empurra os links para a direita */
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.navbar-toggler {
+    display: none; /* Escondido no desktop */
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.navbar-toggler-icon {
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(179, 0, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+/* ---  Estilos do Dropdown da Navbar --- */
+.nav-item {
+    position: relative; 
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(10, 10, 10, 0.95);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    min-width: 180px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1001;
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu .nav-link {
+    padding: 0.75rem 1rem;
+    display: block;
+    width: auto;
+}
+
+.nav-item:hover > .dropdown-menu {
+    display: block;
+}
+
+/* ---  Hero Section (Carrossel) --- */
+/* Esta regra substitui a .hero-section original */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    height: calc(100vh - 70px); 
+    min-height: 500px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #000; /* Fundo preto caso a imagem não carregue */
+}
+
+/* Regra para o Carrossel de fundo */
+#ghostCarousel {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+}
+.carousel-inner, .carousel-item {
+    height: 100%;
+}
+.carousel-item {
+    height: 100%; 
+    background-size: cover ; 
+    background-position: center ; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não deixa a imagem repetir */
+}
+.hero-content {
+    position: relative; 
+    z-index: 10; /* Fica na FRENTE do carrossel */
+    color: #fff; 
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro para legibilidade */
+    border: 1px solid var(--dark-purple);
+    border-radius: 8px;
+    max-width: 90%;
+    width: 600px; 
+    box-shadow: 0 0 20px rgba(179, 0, 255, 0.3);
+}
+
+.hero-content h1 {
+    font-family: 'Metal Mania', cursive;
+    font-size: clamp(3rem, 10vw, 4.5rem);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    color: #fff;
+    margin: 0 0 1rem 0;
+}
+
+.hero-album-cover {
+    max-width: 200px;
+    border-radius: 8px;
+    margin: 0 auto 1.5rem auto;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* --- Estilos para Botões de Navegação do Carrossel (Discretos) --- */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Menor largura para o botão */
+    opacity: 0.3; /* Transparência para ser discreto */
+    transition: opacity 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 0.8; /* Aumenta a opacidade ao passar o mouse */
+    background-color: rgba(179, 0, 255, 0.1); /* Um leve brilho roxo no hover */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 50%; /* Diminui o tamanho do ícone de seta */
+    filter: brightness(200%) drop-shadow(0 0 5px var(--primary-color)); /* Ícone mais claro e com leve brilho */
+}
+
+.carousel-indicators button {
+    background-color: var(--primary-color);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-indicators button.active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Botões (Estilo original) */
+.btn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.btn-custom {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.btn-custom:hover {
+    background-color: #c43bff;
+    transform: translateY(-3px);
+}
+.btn-outline {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+.btn-outline:hover {
+    background-color: #fff;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+
+/* ---Discography Section (CSS Grid) --- */
+.discography-section {
+    padding: 4rem 0;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.album-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+.album-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.album-card:hover .album-cover {
+    transform: scale(1.05);
+}
+
+.album-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    color: #fff;
+    padding: 1.5rem 1rem 1rem;
+    text-align: center;
+}
+
+.album-info h5, .album-info p { margin: 0; }
+.album-info h5 { font-weight: bold; }
+.album-info p { opacity: 0.8; font-size: 0.9rem; }
+
+
+/* --- Video Section e Iframe --- */
+.video-section {
+    padding: 4rem 0;
+}
+/* Container para o Iframe do YouTube */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 56.25%; /* Proporção 16:9 */
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(179, 0, 255, 0.4);
+}
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+/* Iframe de Anúncio (Página Show) */
+.iframe-anuncio {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px solid var(--dark-purple);
+    background: #111;
+    border-radius: 8px;
+}
+.iframe-anuncio h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+    opacity: 0.7;
+    font-family: 'Metal Mania';
+}
+.iframe-anuncio iframe {
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+}
+
+
+/* --- Footer e SVG --- */
+.footer {
+    background-color: #000;
+    border-top: 2px solid var(--primary-color);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.social-icons {
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    margin: 0 0.75rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.svg-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    opacity: 0.5;
+}
+.grucifix-svg {
+    color: var(--primary-color);
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* --- Botão Voltar ao Topo --- */
+#backToTopBtn {
+    display: none; 
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+#backToTopBtn:hover {
+    background-color: var(--dark-purple);
+}
+
+/* --- Estilos Gerais de Página (Sobre, Show, Contato) --- */
+.page-section {
+    padding: 4rem 0;
+    background-color: rgba(0,0,0,0.3);
+}
+.page-title {
+    font-family: 'Metal Mania', cursive;
+    text-align: center;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+/* --- Estilos da Navbar Ativa --- */
+.navbar-nav .nav-link.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* --- Estilos da Página SHOWS --- */
+.tour-poster {
+    display: block;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto 3rem auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.table-container {
+    overflow-x: auto; 
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background-color: rgba(0,0,0,0.4);
+}
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--dark-purple);
+}
+th {
+    font-family: 'Metal Mania', cursive;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+td { vertical-align: middle; }
+
+.btn-ticket {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+.btn-ticket:hover { background-color: #c43bff; }
+.btn-ticket.btn-soon {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.full-tour-button-container {
+    text-align: center;
+    margin-top: 2.5rem; 
+}
+
+/* --- Estilos da Página SOBRE --- */
+.about-content p {
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.about-image-float {
+    float: left; 
+    width: 40%;
+    max-width: 300px;
+    margin-right: 1.5rem; 
+    margin-bottom: 1rem; 
+    border-radius: 8px;
+}
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.inline-link {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+.inline-link:hover { text-decoration: underline; }
+
+/*  CSS Grid na página Sobre */
+.pope-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.pope-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    cursor: help; 
+}
+.pope-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: top center; 
+    display: block;
+    transition: transform 0.3s ease;
+}
+.pope-card:hover .pope-image {
+    transform: scale(1.05);
+}
+.pope-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+    color: #fff;
+    padding: 1.5rem 1rem 1rem;
+    text-align: center;
+}
+.pope-info h5, .pope-info p { margin: 0; }
+.pope-info h5 { font-weight: bold; }
+.pope-info p { opacity: 0.8; font-size: 0.9rem; }
+
+
+/* ---  Estilos do Formulário Bootstrap (Página Contato) --- */
+/* Sobrescreve estilos do Bootstrap para manter o tema */
+.form-label {
+    color: var(--primary-color);
+}
+.form-control {
+    background-color: #222;
+    border-color: var(--dark-purple);
+    color: var(--text-color);
+}
+.form-control:focus {
+    background-color: #333;
+    border-color: var(--primary-color);
+    color: var(--text-color);
+    box-shadow: 0 0 0 0.25rem rgba(179, 0, 255, 0.25);
+}
+.form-control::placeholder {
+    color: #6c757d;
+}
+/* Ajusta o feedback de validação do Bootstrap */
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+.form-control.is-valid {
+    border-color: #198754;
+}
+
+
+/* --- Media Queries para Responsividade (NÃO-ANINHADAS) --- */
+
+/* Media Query Principal para Mobile (Menu, etc) */
+@media (max-width: 768px) {
+    /*  Menu Sandwich */
+    .navbar-toggler {
+        display: block; 
+    }
+    .navbar-collapse {
+        display: none; 
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: rgba(10, 10, 10, 0.95);
+        border-top: 1px solid var(--primary-color);
+    }
+    .navbar-collapse.show {
+        display: block; 
+    }
+    .navbar-nav {
+        flex-direction: column; /* Links na vertical no mobile */
+        padding: 1rem 0;
+        gap: 0;
+        margin-left: 0; /* Reseta o margin no mobile */
+    }
+    .nav-item {
+        text-align: center;
+    }
+    .nav-link {
+        display: block;
+        padding: 0.75rem 0;
+    }
+    
+    /*  Dropdown no mobile */
+    .dropdown-menu {
+        position: static;
+        border: none;
+        background-color: transparent;
+        padding-left: 1rem; /* Indentação */
+    }
+    .navbar-collapse.show .dropdown-menu {
+        display: block;
+    }
+
+    /* Ajustes Hero */
+    .hero-content {
+        padding: 1.5rem;
+        width: 90%;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-album-cover {
+        max-width: 100px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .btn {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+/* Media Query para Float (Sobre) */
+@media (max-width: 600px) {
+    .about-image-float {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Media Query para Tabela (Shows) */
+@media (max-width: 950px) {
+    .table-container thead {
+        display: none;
+    }
+    .table-container table,
+    .table-container tbody,
+    .table-container tr,
+    .table-container td {
+        display: block;
+        width: 100%;
+    }
+    .table-container tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--dark-purple);
+        border-radius: 8px;
+        padding: 1rem;
+    }
+    .table-container td {
+        padding: 0; 
+        margin-bottom: 1rem; 
+        border-bottom: none; 
+        text-align: left; 
+    }
+    .table-container tr td:last-child {
+        margin-bottom: 0; 
+    }
+    .table-container td::before {
+        content: attr(data-label); 
+        display: block; 
+        font-weight: bold;
+        color: var(--primary-color);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin-bottom: 0.25rem; 
+        position: static; 
+        width: auto;
+    }
+    .table-container td[data-label="Ingressos"] {
+        margin-top: 1rem;
+    }
+    .table-container td[data-label="Ingressos"]::before {
+        display: none; 
+    }
+}
