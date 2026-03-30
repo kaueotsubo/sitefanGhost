@@ -1,5 +1,18 @@
 /* --- show.css: Estilos da Página de Shows --- */
 
+.aviso-clero {
+    background-color: #0d0d0d; /* Fundo bem escuro */
+    border-top: 2px solid #b79b5b; /* Borda dourada/creme */
+    border-bottom: 2px solid #b79b5b;
+}
+
+/* Efeito de transição nos botões dos cards */
+.card .btn:hover {
+    background-color: #b79b5b;
+    border-color: #b79b5b;
+    color: #000;
+}
+
 /* Imagem do Pôster */
 .tour-poster {
     display: block;
